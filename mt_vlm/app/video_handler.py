@@ -2,7 +2,7 @@
 from app.frame_extractor import FrameExtractor
 from app.image_analyzer import VLMAnalyzer
 from app.labeler import SceneLabeler
-from app.prompt import prompt_1
+from app.prompt import prompt_1, prompt_2
 
 class VideoHandler:
     """

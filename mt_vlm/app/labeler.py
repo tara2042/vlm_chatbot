@@ -6,7 +6,7 @@ class SceneLabeler:
     """
     Labels the scene based on VLM-generated frame-level descriptions and creates a final summary.
     """
-    def __init__(self, llm_model: str = "mistral"):
+    def __init__(self, llm_model: str = "deepseek-coder:6.7b"):
         self.violation_keywords = ["ran red light", "crossed against", "illegal", "threat", "accident", "theft"]
         self.normal_keywords = ["no issue", "normal", "followed rules"]
         self.llm_model = llm_model
@@ -29,7 +29,7 @@ class SceneLabeler:
 
         payload = {
             "model": self.llm_model,
-            "prompt": prompt_3,
+            "prompt": prompt_2,
             "stream": False
         }
 
