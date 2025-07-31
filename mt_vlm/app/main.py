@@ -10,11 +10,8 @@ def main(path: str):
     with open("mt_vlm/output/summary_output.json", "w") as f:
         json.dump(analysis_results, f, indent=2)
 
-    print("\nFinal Summary:")
-    print(analysis_results["summary"])
-    print("Classification:", analysis_results["observations"])
-    print("Classification:", analysis_results["classification"])
-
+    print("\nFinal Summary:\n", analysis_results)
+    
 
 video_path = r"C:\Users\Tarachand yadav\Downloads\eval_dataset\test_sample2.mp4"
 if __name__ == "__main__":

@@ -43,3 +43,27 @@ Provide:
 Respond in JSON format with fields: summary, observations, classification.
 
 """
+
+prompt_4 = """
+You are an expert in video scene understanding.
+
+Below are frame-level image summaries from a video.
+
+Your task is:
+1. Read and synthesize the summaries.
+2. Write a brief summary capturing the key events or common themes.
+3. Classify the entire scene using one of the following categories:
+   - Normal
+   - Violation
+   - Potential Risk
+   - Needs Review
+
+Only use the information provided below. Do NOT invent any events, objects, or people. 
+
+=== Frame Summaries ===
+{joined_summaries}
+
+=== Output Format ===
+Summary: <write here>
+Classification: <choose one>
+"""

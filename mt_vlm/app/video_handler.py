@@ -15,32 +15,7 @@ class VideoHandler:
         # self.analysis_prompt = "Describe any traffic events, rule adherence, or violations in this frame."
         self.analysis_prompt = prompt
 
-    # def process_(self):
-    #     """
-    #     Returns final summary of entire video clip
-    #     """
-    #     frames, timestamps = self.extractor.extract_frames()
-    #     print(f'total frames  - {len(frames)}')
-    #     output = []
-
-    #     cnt = 1
-    #     for frame, ts in zip(frames, timestamps):
-            
-    #         if cnt%5 == 0:    
-    #             print(f'processing frame {cnt}/{len(frames)}')
-    #             summary = self.analyzer.analyze_image(frame, self.analysis_prompt)
-    #             label = self.labeler.label_summary(summary)
-    #             output.append({
-    #                 "timestamp_ms": ts,
-    #                 "summary": summary,
-    #                 "label": label
-    #             })
-
-    #         cnt += 1
-            
-    #     return output
-    
-    # function to process sample frames and generate text from the image
+ # function to process sample frames and generate text from the image
     def process(self, max_samples: int = 3):
         """
         Returns a summary for a few representative frames from the video.
@@ -72,7 +47,8 @@ class VideoHandler:
                 "label": label
             })
         summaries = [entry["summary"] for entry in output]
-        print(f"All summaries:\n", "\n".join(summaries))
+        # print('summary List - \n', summaries)
+        # print(f"All summaries:\n", "\n".join(summaries))
 
         # print(f'All the summary from sample frames {output['summary']}')
         parsed_summary = self.labeler.generate_final_summary(summaries)
